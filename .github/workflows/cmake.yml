@@ -16,7 +16,6 @@ jobs:
 
     - name: Hello
       run: echo "Hello"
-      run: echo "Hello123"
       
     - name: input build dir
       run: ${{github.workspace}}/build
