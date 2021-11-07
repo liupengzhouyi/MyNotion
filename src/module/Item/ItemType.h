@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "ItemType/ItemType.h"
+#include "./itemTypeClass/ItemTypeClass.h"
 
 
 namespace Module {
