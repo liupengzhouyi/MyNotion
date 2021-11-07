@@ -18,7 +18,7 @@ jobs:
       run: echo "Hello"
       
     - name: input build dir
-      run: ${{github.workspace}}/build
+      run: cd ${{github.workspace}}/build
       
     - name: cmake:building
       run: cmake ..
