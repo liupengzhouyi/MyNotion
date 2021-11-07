@@ -24,10 +24,10 @@ jobs:
       run: cd ${{github.workspace}}/build
       
     - name: cmake:building
-      run: cmake ..
+      run: cmake -H. -Bbuild
       
     - name: make:building
-      run: make
+      run: ${{github.workspace}}/build/make
       
     - name: Over
       run: echo "Over"
