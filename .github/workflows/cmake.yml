@@ -18,14 +18,14 @@ jobs:
       run: echo "Hello"
       
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build
-
-    - name: BuildCmake
-      run: cmake --build ${{github.workspace}}/build
+      run: cd ${{github.workspace}}/build&&$(cmake ..)
       
     - name: Building
       run: ./${{github.workspace}}/build/make
-
+      
+    - name: Over
+      run: echo "Over"
+    
 #     - name: Test
 #       working-directory: ${{github.workspace}}/build
 #       run: ctest -C ${{env.BUILD_TYPE}}
