@@ -1,0 +1,38 @@
+name: CMake
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Hello
+      run: echo "Hello"
+    
+    - name: create build dir
+      run: mkdir ${{github.workspace}}/build
+      
+    - name: input build dir
+      run: cd ${{github.workspace}}/build
+      
+    - name: cmake:building
+      run: cmake -H. -Bbuild
+      
+    - name: make:building
+      run: cd ${{github.workspace}}/build&&make
+      
+    - name: Over
+      run: echo "Over"
+    
+#     - name: Test
+#       working-directory: ${{github.workspace}}/build
+#       run: ctest -C ${{env.BUILD_TYPE}}
+      
