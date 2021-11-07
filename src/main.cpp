@@ -10,12 +10,9 @@ using common::timeType::DateTime;
 int main() 
 {
     std::cout << "Holle, This is My Notion!" << std::endl;
-    DateTime *dateTime = new DateTime();
-    dateTime->init();
-    std::cout << dateTime->getDataeTimeAsString();
     ItemType *item = new ItemType();
     item->initializationItemtype();
     std::string date_time = item->getDate_time();
-    std::cout << "DateTime:" << std::endl;
+    std::cout << "DateTime:" << date_time << std::endl;
     return 0;
 }
