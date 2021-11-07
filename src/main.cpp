@@ -13,9 +13,9 @@ int main()
     DateTime *dateTime = new DateTime();
     dateTime->init();
     std::cout << dateTime->getDataeTimeAsString();
-    // ItemType *item = new ItemType();
-    // item->initializationItemtype();
-    // std::string date_time = item->getDate_time();
-    // std::cout << "DateTime:" << std::endl;
+    ItemType *item = new ItemType();
+    item->initializationItemtype();
+    std::string date_time = item->getDate_time();
+    std::cout << "DateTime:" << std::endl;
     return 0;
 }
