@@ -16,6 +16,9 @@ jobs:
 
     - name: Hello
       run: echo "Hello"
+    
+    - name: create build dir
+      run: mkdir ${{github.workspace}}/build
       
     - name: input build dir
       run: cd ${{github.workspace}}/build
