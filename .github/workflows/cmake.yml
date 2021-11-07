@@ -16,12 +16,16 @@ jobs:
 
     - name: Hello
       run: echo "Hello"
+      run: echo "Hello123"
       
-    - name: Configure CMake
-      run: cd ${{github.workspace}}/build&&$(cmake ..)
+    - name: input build dir
+      run: ${{github.workspace}}/build
       
-    - name: Building
-      run: ./${{github.workspace}}/build/make
+    - name: cmake:building
+      run: cmake ..
+      
+    - name: make:building
+      run: make
       
     - name: Over
       run: echo "Over"
