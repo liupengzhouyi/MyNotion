@@ -27,7 +27,7 @@ jobs:
       run: cmake -H. -Bbuild
       
     - name: make:building
-      run: ${{github.workspace}}/build/make
+      run: cd ${{github.workspace}}/build&&make
       
     - name: Over
       run: echo "Over"
