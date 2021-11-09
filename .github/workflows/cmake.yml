@@ -26,11 +26,14 @@ jobs:
     - name: delete file
       run: rm -rf ./demo
 
-    -name: input MyNotion dir
-      run: ls -l ${{github.workspace}}/build/product/lib/bin
-      
-    -name: show MyNotion
-      run: ls -l ${{github.workspace}}/build/product/lib/lib
+    - name: input MyNotion dir
+      run: ls -l ./product/bin
+
+    - name: show MyNotion
+      run: ls -l ./product/lib
+
+    - name: run MyNotion
+      run: ls -l ./product/bin/MyNotion
 
     - name: Over
       run: echo "Over"
