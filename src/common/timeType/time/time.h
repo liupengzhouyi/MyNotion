@@ -1,5 +1,5 @@
-#ifndef COMMON_TIMETYPE_TIMT_H
-#define COMMON_TIMETYPE_TIMT_H
+#ifndef _COMMON_TIMETYPE_TIMT_H_
+#define _COMMON_TIMETYPE_TIMT_H_
 
 #include <iostream>
 #include <ctime>

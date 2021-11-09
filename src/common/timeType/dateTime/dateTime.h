@@ -1,5 +1,5 @@
-#ifndef COMMON_TIMRTYPE_DATETIME_H
-#define COMMON_TIMRTYPE_DATETIME_H
+#ifndef _COMMON_TIMRTYPE_DATETIME_H_
+#define _COMMON_TIMRTYPE_DATETIME_H_
 
 #include <iostream>
 #include <string>

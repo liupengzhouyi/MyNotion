@@ -2,16 +2,17 @@
 #include <string>
 
 #include <common/timeType/dateTime/dateTime.h>
-#include <module/item/ItemType.h>
+#include <common/dataType/data/Data.h>
 
-using Module::Item::ItemType;
+using common::dataType::Data;
+using common::dataType::Item;
 using common::timeType::DateTime;
 
 int main() 
 {
     std::cout << "Holle, This is My Notion!" << std::endl;
-    ItemType *item = new ItemType();
-    item->initializationItemtype();
+    Item *item = new Item();
+    item->initializationItem();
     std::string date_time = item->getDate_time();
     std::cout << "DateTime:" << date_time << std::endl;
     return 0;
