@@ -21,7 +21,7 @@ jobs:
       run: cd ${{github.workspace}}/build
       
     - name: building
-      run: sh ${{github.workspace}}/build/build.sh demo
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh build.sh demo
       
     - name: delete file
       run: rm -rf ${{github.workspace}}/build/demo
