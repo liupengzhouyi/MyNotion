@@ -2,6 +2,7 @@
 
 shell_folder=$(dirname $(readlink -f "$0"))
 project_path="${shell_folder}/.."
+google_test_install_path="${shell_folder}/../lib/googletest"
 google_test_path_frame="${shell_folder}/../source"
 if [ -d "${google_test_path_frame}/googletest" ]
 then
@@ -16,21 +17,28 @@ else
     cd googletest
     mkdir build 
     cd build
-    cmake ..
+    cmake -DCMAKE_INSTALL_PREFIX=${google_test_install_path} ..
     make
     echo "🐮🍺Building google test brin package success."
 
-    echo "Copy library from ${project_path}/source/googletest/build/lib/* to ${project_path}/lib ..."
     if [ ! -d "${project_path}/lib" ]
     then
         mkdir ${project_path}/lib
+        mkdir ${project_path}/lib/googletest
     fi
-    cp -r ${project_path}/source/googletest/build/lib/* ${project_path}/lib
-    echo "🐮🍺Copy library over!"
+    if [ ! -d "${project_path}/lib/googletest" ]
+    then
+        mkdir ${project_path}/lib
+        mkdir ${project_path}/lib/googletest
+    fi
+
+    make install
+    echo "🐮🍺Install google test success."
 
     echo "🚮Delete google test source code..."
     if [ "${google_test_path_frame}" != "" ]
     then
+        echo "🚮"
         rm -rf ${google_test_path_frame}/googletest
     fi
     echo "🐮🍺Delete google test source code over!"
