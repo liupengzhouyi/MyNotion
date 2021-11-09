@@ -33,7 +33,7 @@ jobs:
       run: ls -l ./product/lib
 
     - name: run MyNotion
-      run: ls -l ./product/bin/MyNotion
+      run: ./product/bin/MyNotion
 
     - name: Over
       run: echo "Over"
