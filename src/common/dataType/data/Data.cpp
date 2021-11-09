@@ -1,8 +1,8 @@
 #include "Data.h"
 
-using common::dataType::Item;
+using Common::DataType::Item;
 
-common::dataType::Data::Data() {
+Common::DataType::Data::Data() {
     this->data = nullptr;
     this->nextData = nullptr;
     this->previousData = nullptr;
@@ -10,7 +10,7 @@ common::dataType::Data::Data() {
     this->previousHistoryData = nullptr;
 }
 
-common::dataType::Data::~Data() {
+Common::DataType::Data::~Data() {
     if (this->data != nullptr) {
         delete(this->data);
         this->data = nullptr;
@@ -21,7 +21,7 @@ common::dataType::Data::~Data() {
     this->previousHistoryData = nullptr;
 }
 
-void common::dataType::Data::initialization() {
+void Common::DataType::Data::initialization() {
     this->data = nullptr;
     this->nextData = nullptr;
     this->previousData = nullptr;
@@ -29,10 +29,10 @@ void common::dataType::Data::initialization() {
     this->previousHistoryData = nullptr;
 }
 
-void common::dataType::Data::setData(Item *data) {
+void Common::DataType::Data::setData(Item *data) {
     this->data = data;
 }
 
-Item* common::dataType::Data::getData() const {
+Item* Common::DataType::Data::getData() const {
     return this->data;
 }

@@ -6,8 +6,8 @@
 #include "../date/date.h"
 #include "../time/time.h"
 
-namespace common {
-namespace timeType {
+namespace Common {
+namespace TimeType {
 
 class DateTime {
 

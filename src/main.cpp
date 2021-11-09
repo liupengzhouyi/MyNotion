@@ -4,9 +4,9 @@
 #include <common/timeType/dateTime/dateTime.h>
 #include <common/dataType/data/Data.h>
 
-using common::dataType::Data;
-using common::dataType::Item;
-using common::timeType::DateTime;
+using Common::DataType::Data;
+using Common::DataType::Item;
+using Common::TimeType::DateTime;
 
 int main() 
 {

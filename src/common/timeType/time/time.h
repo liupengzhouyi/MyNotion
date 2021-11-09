@@ -5,8 +5,8 @@
 #include <ctime>
 #include <string>
 
-namespace common {
-namespace timeType {
+namespace Common {
+namespace TimeType {
 
 class Time {
 public:

@@ -4,9 +4,9 @@
 #include <iostream>
 #include <string>
 
-namespace common {
+namespace Common {
 
-namespace dataType {
+namespace DataType {
 
 enum class ItemType {
     INIT,  // 初始

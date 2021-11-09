@@ -6,10 +6,10 @@
 
 #include <common/dataType/item/Item.h>
 
-namespace common {
-namespace dataType {
+namespace Common {
+namespace DataType {
 
-using common::dataType::Item;
+using Common::DataType::Item;
 
 class Data {
 

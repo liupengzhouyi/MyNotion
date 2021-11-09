@@ -1,49 +1,49 @@
 #include "time.h"
 
-using common::timeType::Time;
+using Common::TimeType::Time;
 
-common::timeType::Time::Time():hour(0), minute(0), second(0) {
+Common::TimeType::Time::Time():hour(0), minute(0), second(0) {
     this->now_time = time(0);
 }
 
-common::timeType::Time::~Time() {
+Common::TimeType::Time::~Time() {
     this->setHour(0);
     this->setMinute(0);
     this->setSecond(0);
 }
 
-void common::timeType::Time::init() {
+void Common::TimeType::Time::init() {
     tm *locelTime = localtime(&this->now_time);
     this->setHour(locelTime->tm_hour);
     this->setMinute(locelTime->tm_min);
     this->setSecond(locelTime->tm_sec);
 }
 
-int common::timeType::Time::getHour() const {
+int Common::TimeType::Time::getHour() const {
     return this->hour;
 }
 
-void common::timeType::Time::setHour(int hour) {
+void Common::TimeType::Time::setHour(int hour) {
     this->hour = hour;
 }
 
-int common::timeType::Time::getMinute() const {
+int Common::TimeType::Time::getMinute() const {
     return this->minute;
 }
 
-void common::timeType::Time::setMinute(int minute) {
+void Common::TimeType::Time::setMinute(int minute) {
     this->minute = minute;
 }
 
-int common::timeType::Time::getSecond() const {
+int Common::TimeType::Time::getSecond() const {
     return this->second;
 }
 
-void common::timeType::Time::setSecond(int second) {
+void Common::TimeType::Time::setSecond(int second) {
     this->second = second;
 }
 
-std::string common::timeType::Time::getTimeAsString() {
+std::string Common::TimeType::Time::getTimeAsString() {
     std::string strTime = std::string();
     if ((this->getHour() == 0) || (this->getMinute() == 0) || (this->getSecond() == 0)) {
         strTime = std::string("00:00:00");
