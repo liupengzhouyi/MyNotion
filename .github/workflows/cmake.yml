@@ -26,9 +26,12 @@ jobs:
     - name: delete file
       run: rm -rf ./demo
 
-    -name: run MyNotion
-      run: ./product/lib/bin/MyNotion
+    -name: input MyNotion dir
+      run: cd ${{github.workspace}}/build/product/lib/bin
       
+    -name: run MyNotion
+      run: ./MyNotion
+
     - name: Over
       run: echo "Over"
     
