@@ -21,19 +21,19 @@ jobs:
       run: cd ${{github.workspace}}/build
       
     - name: building
-      run: sh build.sh demo
+      run: sh ${{github.workspace}}/build/build.sh demo
       
     - name: delete file
-      run: rm -rf ./demo
+      run: rm -rf ${{github.workspace}}/build/demo
 
     - name: input MyNotion dir
-      run: ls -l ./product/bin
+      run: ls -l ${{github.workspace}}/build/product/bin
 
     - name: show MyNotion
-      run: ls -l ./product/lib
+      run: ls -l ${{github.workspace}}/build/product/lib
 
     - name: run MyNotion
-      run: ./product/bin/MyNotion
+      run: ${{github.workspace}}/build/product/bin/MyNotion
 
     - name: Over
       run: echo "Over"
