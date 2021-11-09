@@ -27,10 +27,10 @@ jobs:
       run: rm -rf ./demo
 
     -name: input MyNotion dir
-      run: cd ${{github.workspace}}/build/product/lib/bin
+      run: ls -l ${{github.workspace}}/build/product/lib/bin
       
-    -name: run MyNotion
-      run: ./MyNotion
+    -name: show MyNotion
+      run: ls -l ${{github.workspace}}/build/product/lib/lib
 
     - name: Over
       run: echo "Over"
