@@ -16,18 +16,18 @@ jobs:
 
     - name: Hello
       run: echo "Hello"
-    
-    - name: create build dir
-      run: mkdir ${{github.workspace}}/build
       
     - name: input build dir
       run: cd ${{github.workspace}}/build
       
-    - name: cmake:building
-      run: cmake -H. -Bbuild
+    - name: building
+      run: sh build.sh demo
       
-    - name: make:building
-      run: cd ${{github.workspace}}/build&&make
+    - name: delete file
+      run: rm -rf ./demo
+
+    -name: run MyNotion
+      run: ./product/lib/bin/MyNotion
       
     - name: Over
       run: echo "Over"
