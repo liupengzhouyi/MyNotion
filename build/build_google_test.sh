@@ -34,6 +34,9 @@ else
 
     make install
     echo "🐮🍺Install google test success."
+    
+    # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${project_path}/lib
+    # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/github/MyNotion/lib/
 
     echo "🚮Delete google test source code..."
     if [ "${google_test_path_frame}" != "" ]

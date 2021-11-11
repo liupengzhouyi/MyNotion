@@ -5,4 +5,4 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/build/product/lib) # �
 
 add_library(table SHARED ./Table.h ./Table.cpp) # 生成动态库 
 
-target_link_libraries(table data) # 链接外部库
+target_link_libraries(table tableItem) # 链接外部库
