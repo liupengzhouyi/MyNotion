@@ -69,3 +69,29 @@ classDiagram
 		DateTime --o Date
 		DateTime --o Time
 ```
+
+## Table
+
+
+```mermaid
+classDiagram
+  	direction TB
+  		class Table {
+    			-hour : int
+			-minute : int
+			-second : int
+  		}
+		class TableItem {
+    			-year : int
+			-month : int
+			-day : int
+  		}
+		class TableData {
+    			-date : Date
+			-time : Time
+  		}
+
+		Table --o TableItem
+		TableItem --o TableData
+
+```
