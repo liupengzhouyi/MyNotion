@@ -35,10 +35,10 @@ int main()
     TableItem *item2 = new TableItem();
     PrintLog("Table *table = new Table();");
     Table *table = new Table();
-    PrintLog("add");
-    table->AddOneRow(item1);
-    PrintLog("add");
-    table->AddOneRow(item2);
+    // PrintLog("add");
+    // table->AddOneRow(item1);
+    // PrintLog("add");
+    // table->AddOneRow(item2);
     PrintLog("delete");
     delete(item1);
     delete(item2);
