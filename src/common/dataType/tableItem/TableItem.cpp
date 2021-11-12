@@ -1,8 +1,11 @@
 #include "TableItem.h"
 
 
-Common::DataType::TableItem::TableItem() {
-    this->data = nullptr;
+Common::DataType::TableItem::TableItem() : data(0){
+    this->nextColumnItem = nullptr;
+    this->nextRowItem = nullptr;
+    this->previousColumnItem = nullptr;
+    this->previousRowItem = nullptr;
 }
 
 Common::DataType::TableItem::~TableItem() {
@@ -54,4 +57,27 @@ Common::DataType::TableItem* Common::DataType::TableItem::GetNextColumnItem() {
         item = this->nextRowItem;
     }
     return item;
+}
+
+void Common::DataType::TableItem::SetNextRowItem(TableItem *data)
+{
+    this->nextRowItem = data;
+}
+
+Common::DataType::TableItem* Common::DataType::TableItem::CopyTableItemData(TableItem *data)
+{
+    TableItem *tempTableItem = new TableItem();
+}
+
+void Common::DataType::TableItem::SetData(Common::DataType::TableData *data)
+{
+    Common::DataType::TableData *tempTableData = new Common::DataType::TableData();
+    tempTableData->CopyCreate(data);
+    delete(this->data);
+    this->data = data;
+}
+
+Common::DataType::TableData* Common::DataType::TableItem::GetData() const
+{
+    return this->data;
 }

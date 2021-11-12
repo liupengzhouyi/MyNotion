@@ -24,6 +24,14 @@ public:
 
     TableItem* GetNextColumnItem();
 
+    void SetNextRowItem(TableItem *data);
+
+    TableItem* CopyTableItemData(TableItem *data);
+
+    void SetData(TableData *data);
+
+    TableData* GetData() const;
+
 private:
 
     TableData *data;

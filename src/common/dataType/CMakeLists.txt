@@ -1,5 +1,5 @@
-add_subdirectory(./item) # 指定 编译子目录
-add_subdirectory(./data) # 指定 编译子目录
-add_subdirectory(./tableData) # 指定 编译子目录
-add_subdirectory(./tableItem) # 指定 编译子目录
-add_subdirectory(./table) # 指定 编译子目录
+add_subdirectory(./item) 
+add_subdirectory(./data) 
+add_subdirectory(./tableData) 
+add_subdirectory(./tableItem) 
+add_subdirectory(./table) 

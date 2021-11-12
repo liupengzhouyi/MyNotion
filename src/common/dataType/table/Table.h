@@ -21,6 +21,8 @@ public:
 
     int getTableColumnsNumber() const;
 
+    void AddOneRow(TableItem *TableItem);
+
 private:
 
     TableItem *table;

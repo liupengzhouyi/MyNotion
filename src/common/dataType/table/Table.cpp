@@ -55,3 +55,24 @@ int Common::DataType::Table::getTableColumnsNumber() const {
 
     return columns;
 }
+
+void Common::DataType::Table::AddOneRow(TableItem *tableItem)
+{
+    if (tableItem == nullptr) {
+        return;
+    }
+    if (this->table = nullptr) {
+        std::cout << "this->table->SetData(tableItem->GetData());" << std::endl;
+        this->table->SetData(tableItem->GetData());
+    } else {
+        if (this->table->HasNextRowItem()) {
+            TableItem *temp = this->table->GetNextRowItem();
+            while(temp->HasNextRowItem()) {
+                temp = temp->GetNextRowItem();
+            }
+            temp->SetNextRowItem(tableItem);
+        } else {
+            this->table->SetNextRowItem(tableItem);
+        }
+    }
+}
