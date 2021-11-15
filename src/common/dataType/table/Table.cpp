@@ -61,18 +61,33 @@ void Common::DataType::Table::AddOneRow(TableItem *tableItem)
     if (tableItem == nullptr) {
         return;
     }
-    std::cout << "A" << std::endl;
-    if (this->table == nullptr) {
-        std::cout << "B" << std::endl;
+    TableItem *temp = this->table;
+    if (temp == nullptr) {
         this->table = tableItem;
-        std::cout << "C" << std::endl;
-    } else {
-        std::cout << "D" << std::endl;
-        TableItem *nextTableItem = this->table->GetNextRowItem();
-        std::cout << "E" << std::endl;
-        while (nextTableItem != nullptr) {
-            nextTableItem = nextTableItem->GetNextRowItem();
+        return;
+    }
+    while (temp->HasNextRowItem()) {
+        temp = temp->GetNextRowItem();
+    }
+    temp->SetNextRowItem(tableItem);
+}
+
+void Common::DataType::Table::ShowTable() const
+{
+    TableItem *tempTableHead = this->table;
+    while (tempTableHead != nullptr) {
+        std::cout << ".|";
+        TableItem *tempTableItem = tempTableHead;
+        while(tempTableItem != nullptr) {
+            TableData *tableData = tempTableItem->GetData();
+            if (tableData->HasData()) {
+                std::cout << tableData->GetDataAsString() << ", ";
+            } else {
+                std::cout << "null" << ", ";
+            }
+            tempTableItem = tempTableItem->GetNextColumnItem();
         }
-        nextTableItem = tableItem;
+        std::cout << std::endl;;
+        tempTableHead = tempTableHead->GetNextRowItem();
     }
 }

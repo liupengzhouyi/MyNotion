@@ -1,8 +1,9 @@
 #include "TableItem.h"
 
 
-Common::DataType::TableItem::TableItem() : data(0)
+Common::DataType::TableItem::TableItem()
 {
+    this->data = new Common::DataType::TableData();
     this->nextColumnItem = nullptr;
     this->nextRowItem = nullptr;
     this->previousColumnItem = nullptr;
@@ -19,13 +20,17 @@ Common::DataType::TableItem::~TableItem()
 
 void Common::DataType::TableItem::AddRowItemAtLast(TableData *data) 
 {
+
     TableItem *newItem = new TableItem();
-    TableData *tempData = new TableData();
-    tempData->CopyCreate(data);
-    newItem->data = tempData;
-    TableItem *temp = this->nextRowItem;
-    if (temp != nullptr) {
-        temp = temp->nextRowItem;
+    newItem->SetData(data);
+
+    TableItem *temp = this->nextColumnItem;
+    while (temp != nullptr) {
+        std::cout << ">" << temp->GetData()->GetDataAsString() << std::endl;
+        temp = temp->nextColumnItem;
+    }
+    if (temp == nullptr) {
+        std::cout << "-" << std::endl;
     }
     temp = newItem;
 }
@@ -40,6 +45,16 @@ bool Common::DataType::TableItem::HasNextRowItem()
 }
 
 Common::DataType::TableItem* Common::DataType::TableItem::GetNextRowItem() 
+{
+    return this->nextRowItem;
+}
+
+void Common::DataType::TableItem::SetNextColumnItem(TableItem *data)
+{
+    this->nextColumnItem = data;
+}
+
+Common::DataType::TableItem* Common::DataType::TableItem::GetNextRowItem() const
 {
     return this->nextRowItem;
 }
@@ -70,9 +85,6 @@ Common::DataType::TableItem* Common::DataType::TableItem::CopyTableItemData(Tabl
 
 void Common::DataType::TableItem::SetData(Common::DataType::TableData *data)
 {
-    Common::DataType::TableData *tempTableData = new Common::DataType::TableData();
-    tempTableData->CopyCreate(data);
-    delete(this->data);
     this->data = data;
 }
 

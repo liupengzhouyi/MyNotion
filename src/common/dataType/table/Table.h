@@ -23,6 +23,8 @@ public:
 
     void AddOneRow(TableItem *TableItem);
 
+    void ShowTable() const;
+    
 private:
 
     TableItem *table;
