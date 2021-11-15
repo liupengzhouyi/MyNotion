@@ -1,21 +1,24 @@
 #include "TableItem.h"
 
 
-Common::DataType::TableItem::TableItem() : data(0){
+Common::DataType::TableItem::TableItem() : data(0)
+{
     this->nextColumnItem = nullptr;
     this->nextRowItem = nullptr;
     this->previousColumnItem = nullptr;
     this->previousRowItem = nullptr;
 }
 
-Common::DataType::TableItem::~TableItem() {
+Common::DataType::TableItem::~TableItem() 
+{
     if (this->data != nullptr) {
         delete(this->data);
         this->data = nullptr;
     }
 }
 
-void Common::DataType::TableItem::AddRowItemAtLast(TableData *data) {
+void Common::DataType::TableItem::AddRowItemAtLast(TableData *data) 
+{
     TableItem *newItem = new TableItem();
     TableData *tempData = new TableData();
     tempData->CopyCreate(data);
@@ -27,7 +30,8 @@ void Common::DataType::TableItem::AddRowItemAtLast(TableData *data) {
     temp = newItem;
 }
 
-bool Common::DataType::TableItem::HasNextRowItem() {
+bool Common::DataType::TableItem::HasNextRowItem() 
+{
     bool key = false;
     if (this->nextRowItem != nullptr) {
         key = true;
@@ -35,15 +39,13 @@ bool Common::DataType::TableItem::HasNextRowItem() {
     return key;
 }
 
-Common::DataType::TableItem* Common::DataType::TableItem::GetNextRowItem() {
-    TableItem *item  = nullptr;
-    if (this->nextRowItem != nullptr) {
-        item = this->nextRowItem;
-    }
-    return item;
+Common::DataType::TableItem* Common::DataType::TableItem::GetNextRowItem() 
+{
+    return this->nextRowItem;
 }
 
-bool Common::DataType::TableItem::HasNextColumnItem() {
+bool Common::DataType::TableItem::HasNextColumnItem() 
+{
     bool key = false;
     if (this->nextColumnItem != nullptr) {
         key = true;
@@ -51,12 +53,9 @@ bool Common::DataType::TableItem::HasNextColumnItem() {
     return key;
 }
 
-Common::DataType::TableItem* Common::DataType::TableItem::GetNextColumnItem() {
-    TableItem *item  = nullptr;
-    if (this->nextColumnItem != nullptr) {
-        item = this->nextRowItem;
-    }
-    return item;
+Common::DataType::TableItem* Common::DataType::TableItem::GetNextColumnItem() 
+{
+    return this->nextColumnItem;
 }
 
 void Common::DataType::TableItem::SetNextRowItem(TableItem *data)

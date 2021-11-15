@@ -61,18 +61,18 @@ void Common::DataType::Table::AddOneRow(TableItem *tableItem)
     if (tableItem == nullptr) {
         return;
     }
-    if (this->table = nullptr) {
-        std::cout << "this->table->SetData(tableItem->GetData());" << std::endl;
-        this->table->SetData(tableItem->GetData());
+    std::cout << "A" << std::endl;
+    if (this->table == nullptr) {
+        std::cout << "B" << std::endl;
+        this->table = tableItem;
+        std::cout << "C" << std::endl;
     } else {
-        if (this->table->HasNextRowItem()) {
-            TableItem *temp = this->table->GetNextRowItem();
-            while(temp->HasNextRowItem()) {
-                temp = temp->GetNextRowItem();
-            }
-            temp->SetNextRowItem(tableItem);
-        } else {
-            this->table->SetNextRowItem(tableItem);
+        std::cout << "D" << std::endl;
+        TableItem *nextTableItem = this->table->GetNextRowItem();
+        std::cout << "E" << std::endl;
+        while (nextTableItem != nullptr) {
+            nextTableItem = nextTableItem->GetNextRowItem();
         }
+        nextTableItem = tableItem;
     }
 }

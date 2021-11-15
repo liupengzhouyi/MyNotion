@@ -36,12 +36,10 @@ int main()
     PrintLog("Table *table = new Table();");
     Table *table = new Table();
     // PrintLog("add");
-    // table->AddOneRow(item1);
+    table->AddOneRow(item1);
     // PrintLog("add");
-    // table->AddOneRow(item2);
+    table->AddOneRow(item2);
     PrintLog("delete");
-    delete(item1);
-    delete(item2);
     delete(table);
 
     return 0;
