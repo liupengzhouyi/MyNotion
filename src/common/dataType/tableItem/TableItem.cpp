@@ -26,11 +26,7 @@ void Common::DataType::TableItem::AddRowItemAtLast(TableData *data)
 
     TableItem *temp = this->nextColumnItem;
     while (temp != nullptr) {
-        std::cout << ">" << temp->GetData()->GetDataAsString() << std::endl;
         temp = temp->nextColumnItem;
-    }
-    if (temp == nullptr) {
-        std::cout << "-" << std::endl;
     }
     temp = newItem;
 }

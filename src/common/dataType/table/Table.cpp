@@ -91,3 +91,72 @@ void Common::DataType::Table::ShowTable() const
         tempTableHead = tempTableHead->GetNextRowItem();
     }
 }
+
+bool Common::DataType::Table::CreateTable(int row, int column)
+{
+    if (this->table != nullptr) {
+        return false;
+    }
+    this->table = new TableItem();
+    table->SetData(new TableData(9));
+    TableItem *indexHead = nullptr;
+    TableItem *index = nullptr;
+    if (this->table != nullptr) {
+        index = this->table;
+        indexHead = this->table;
+    } else {
+        return false;
+    }
+
+    for (int i = 1; i < column; i++) {
+        TableItem *temp = new TableItem();
+        temp->SetData(new TableData(2));
+        if (temp != nullptr) {
+            if ((index != nullptr) && (!index->HasNextColumnItem())) {
+                index->SetNextColumnItem(temp);
+            } else {
+                delete(temp);
+                return false;
+            }
+        }
+        if ((index != nullptr) && (index->HasNextColumnItem())) {
+            index = index->GetNextColumnItem();
+        } else {
+            return false;
+        }
+    }
+
+    index = nullptr;
+    for (int i = 1; i < row; i++) {
+        TableItem *head = nullptr;
+        index = new TableItem();
+        index->SetData(new TableData(2));
+        if (index != nullptr) {
+            head = index;
+        } else {
+            return false;
+        }
+        for (int j = 1; j < column; j++) {
+            TableItem *temp = new TableItem();
+            temp->SetData(new TableData(2));
+            if (temp != nullptr) {
+                if ((index != nullptr) && (!index->HasNextColumnItem())) {
+                    index->SetNextColumnItem(temp);
+                } else {
+                    delete(temp);
+                    return false;
+                }
+            }
+            if ((index != nullptr) && (index->HasNextColumnItem())) {
+                index = index->GetNextColumnItem();
+            } else {
+                return false;
+            }
+        }
+        index = nullptr;
+        indexHead->SetNextRowItem(head);
+        head = nullptr;
+        indexHead = indexHead->GetNextRowItem();
+    }
+
+}

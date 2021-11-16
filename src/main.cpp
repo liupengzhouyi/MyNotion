@@ -70,5 +70,9 @@ int main()
     PrintLog("delete");
     delete(table);
 
+    Table *table1 = new Table();
+    table1->CreateTable(3, 4);
+    table1->ShowTable();
+    
     return 0;
 }

@@ -24,6 +24,8 @@ public:
     void AddOneRow(TableItem *TableItem);
 
     void ShowTable() const;
+
+    bool CreateTable(int row, int column);
     
 private:
 
