@@ -1,6 +1,5 @@
-#ifndef _TEST_COMMON_TIMETYPE_TESTDATE_H_
-#define _TEST_COMMON_TIMETYPE_TESTDATE_H_
-
+#ifndef _TEST_COMMON_TIMETYPE_TESTTIME_H_
+#define _TEST_COMMON_TIMETYPE_TESTTIME_H_
 
 #include "gtest/gtest.h"
 
@@ -8,7 +7,7 @@ namespace Test {
 namespace TestCommon {
 namespace TestTimeType {
 
-class TestDate : public ::testing::Test {
+class TestTime : public ::testing::Test {
 
 
     void SetUp() override {
