@@ -72,23 +72,25 @@ classDiagram
 
 ## Table
 
-
 ```mermaid
 classDiagram
   	direction TB
   		class Table {
-    			-hour : int
+    		-hour : int
 			-minute : int
 			-second : int
   		}
 		class TableItem {
-    			-year : int
-			-month : int
-			-day : int
+    		-TableData : data
+			-TableItem : previousRowItem
+			-TableItem : nextRowItem
+			-TableItem : previousColumnItem
+			-TableItem : nextColumnItem
   		}
 		class TableData {
-    			-date : Date
-			-time : Time
+    		-bool : HasData
+			-DataType : dataType
+			-data : data
   		}
 
 		Table --o TableItem

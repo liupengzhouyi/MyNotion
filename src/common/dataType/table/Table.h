@@ -21,7 +21,7 @@ public:
 
     int getTableColumnsNumber() const;
 
-    void AddOneRow(TableItem *TableItem);
+    void AddOneRow(TableItem *tableRow);
 
     void ShowTable() const;
 

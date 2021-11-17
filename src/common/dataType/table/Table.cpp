@@ -56,20 +56,20 @@ int Common::DataType::Table::getTableColumnsNumber() const {
     return columns;
 }
 
-void Common::DataType::Table::AddOneRow(TableItem *tableItem)
+void Common::DataType::Table::AddOneRow(TableItem *tableRow)
 {
-    if (tableItem == nullptr) {
+    if (tableRow == nullptr) {
         return;
     }
     TableItem *temp = this->table;
     if (temp == nullptr) {
-        this->table = tableItem;
+        this->table = tableRow;
         return;
     }
     while (temp->HasNextRowItem()) {
         temp = temp->GetNextRowItem();
     }
-    temp->SetNextRowItem(tableItem);
+    temp->SetNextRowItem(tableRow);
 }
 
 void Common::DataType::Table::ShowTable() const
