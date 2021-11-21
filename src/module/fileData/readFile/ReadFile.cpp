@@ -30,7 +30,7 @@ void Module::FileDate::ReadFile::SetFileInfo() {
     std::ifstream file; 
     file.open(this->path); 
     file >> this->fileInfo;
-    file.close(); 
+    file.close();
 }
 
 std::string Module::FileDate::ReadFile::GetFileInfo() {
