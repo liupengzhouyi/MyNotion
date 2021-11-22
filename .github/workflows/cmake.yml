@@ -35,6 +35,9 @@ jobs:
     - name: run MyNotion
       run: ${{github.workspace}}/build/product/bin/MyNotion
 
+    - name: clean
+      run: sh ${{github.workspace}}/build/clean_build_dir.sh
+
     - name: Over
       run: echo "Over"
     
