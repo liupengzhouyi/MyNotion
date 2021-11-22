@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <sys/stat.h>
+#include <vector>
 
 namespace Module {
 namespace FileDate {
@@ -25,11 +26,15 @@ public:
 
     std::string getPath();
 
+    std::vector<std::string> GetFileInfoList();
+    
 private:
+
 
    std::string path;
    bool hasFile;
    std::string fileInfo;
+   std::vector<std::string> fileInfoList;
    int beginLineNum;
    int endLineNum;
 

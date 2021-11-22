@@ -6,6 +6,7 @@ Module::FileDate::ReadFile::ReadFile() {
     this->path = std::string();
     this->hasFile = false;
     this->fileInfo = std::string();
+    this->fileInfoList = {};
     this->beginLineNum = -1;
     this->endLineNum = -1;
 }
@@ -14,6 +15,8 @@ Module::FileDate::ReadFile::~ReadFile() {
     this->path = std::string();
     this->hasFile = false;
     this->fileInfo = std::string();
+    this->fileInfoList.clear();
+    this->fileInfoList = {};
     this->beginLineNum = -1;
     this->endLineNum = -1;
 }
@@ -29,7 +32,15 @@ void Module::FileDate::ReadFile::SetHasFile() {
 void Module::FileDate::ReadFile::SetFileInfo() {
     std::ifstream file; 
     file.open(this->path); 
-    file >> this->fileInfo;
+    std::string tempInfo;
+    while(getline(file, tempInfo, '\n')) {
+        if (this->fileInfo.length() == 0) {
+            this->fileInfo = tempInfo;
+        } else {
+            this->fileInfo = this->fileInfo + "\n" + tempInfo;
+        }
+        this->fileInfoList.push_back(tempInfo);
+    } 
     file.close();
 }
 
@@ -43,4 +54,9 @@ void Module::FileDate::ReadFile::SetPath(std::string path) {
 
 std::string Module::FileDate::ReadFile::getPath() {
     return this->path;
+}
+
+std::vector<std::string> Module::FileDate::ReadFile::GetFileInfoList()
+{
+    return this->fileInfoList;
 }

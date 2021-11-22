@@ -6,7 +6,8 @@
 #include <common/dataType/table/Table.h>
 #include <common/dataType/tableItem/TableItem.h>
 #include <common/dataType/tableData/TableData.h>
-
+#include <module/controler/page/page.h>
+#include <module/fileData/readFile/ReadFile.h>
 
 using Common::DataType::Data;
 using Common::DataType::Item;
@@ -14,6 +15,8 @@ using Common::TimeType::DateTime;
 using Common::DataType::TableData;
 using Common::DataType::TableItem;
 using Common::DataType::Table;
+using Module::Controler::Page;
+using Module::FileDate::ReadFile;
 
 void PrintLog(std::string log)
 {
@@ -74,5 +77,22 @@ int main()
     table1->CreateTable(3, 4);
     table1->ShowTable();
     
+    Page *page = new Page();
+    Item pageItem = page->CreatePage();
+    std::cout << pageItem.getDate_time() << std::endl;
+
+    std::cout << "-----------------------" << std::endl;
+    ReadFile readFile = ReadFile();
+    readFile.SetPath("/home/github/MyNotion/README.md");
+    readFile.SetHasFile();
+    std::string info = std::string();
+    if (readFile.GetHasFile()) {
+        std::cout << ":::" << std::endl;
+        readFile.SetFileInfo();
+        info = readFile.GetFileInfo();
+    }
+    std::cout << info << std::endl;
+    std::cout << "-----------------------" << std::endl;
+
     return 0;
 }
