@@ -69,7 +69,6 @@ int main()
 
     std::cout << item2->GetNextColumnItem()->GetData()->GetDataAsString() << std::endl;
 
-
     PrintLog("delete");
     delete(table);
 

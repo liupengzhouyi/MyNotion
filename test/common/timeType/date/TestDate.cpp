@@ -25,6 +25,6 @@ TEST_F(TestDate, Tow) {
   Date date;
   date.init();
   std::string strDate = date.getDateAsString();
-  EXPECT_EQ(strDate.length(), 7);
+  EXPECT_EQ(strDate.length(), 10);
 }
 
