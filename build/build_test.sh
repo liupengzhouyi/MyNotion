@@ -64,6 +64,6 @@ function build_unit_test() {
     echo "--------------------------------------------------------------------"
 }
 
-build_unit_test "/home/github/MyNotion/test/common/timeType/date"
+build_unit_test "../test/common/timeType/date"
 
-build_unit_test "/home/github/MyNotion/test/common/timeType/time"
+build_unit_test "../test/common/timeType/time"
