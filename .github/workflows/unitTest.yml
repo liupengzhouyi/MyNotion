@@ -21,10 +21,10 @@ jobs:
       run: cd ${{github.workspace}}/build; echo $(pwd); sh clean_build_dir.sh
       
     - name: building test file
-      run: cd ${{github.workspace}}/build; echo $(pwd); sh build_test.sh
+      run: cd ${{github.workspace}}/build; echo $(pwd); bash build_test.sh
 
     - name: running google test
-      run: cd ${{github.workspace}}/build; echo $(pwd); sh running_test.sh
+      run: cd ${{github.workspace}}/build; echo $(pwd); bash running_test.sh
 
     - name: clean
       run: cd ${{github.workspace}}/build; echo $(pwd); sh clean_build_dir.sh
