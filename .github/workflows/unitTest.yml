@@ -1,0 +1,34 @@
+name: UnitTest
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Hello
+      run: echo "Hello"
+      
+    - name: clean build dir
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh clean_build_dir.sh
+      
+    - name: building test file
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh build_test.sh
+
+    - name: running google test
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh running_test.sh
+
+    - name: clean
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh clean_build_dir.sh
+
+    - name: Over
+      run: echo "Over"
+      
