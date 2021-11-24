@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.16)
 
 project(TestTime)
 
-set(SRC_DIR /home/github/MyNotion/src/common/timeType/time/time.cpp)
+set(SRC_DIR ../../../../../src/common/timeType/time/time.cpp)
 
 aux_source_directory(SRC_DIR SRC_CODE)
 
