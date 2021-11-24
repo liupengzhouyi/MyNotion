@@ -1,7 +1,7 @@
 #include "TestDate.h"
 #include <iostream>
 #include <string>
-#include "/home/github/MyNotion/src/common/timeType/date/date.h"
+#include "../../../../src/common/timeType/date/date.h"
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv) {
