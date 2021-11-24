@@ -21,6 +21,7 @@ TEST_F(TestDate, One) {
 }
 
 TEST_F(TestDate, Tow) {
+  std::cout << "Hello!" << std::endl;
   int n = 0;
   Date date;
   date.init();
