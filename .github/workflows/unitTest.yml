@@ -20,9 +20,12 @@ jobs:
     - name: clean build dir
       run: cd ${{github.workspace}}/build; echo $(pwd); sh clean_build_dir.sh
     
-    - name: make google test lib
+    - name: make Google test lib
       run: cd ${{github.workspace}}/build; echo $(pwd); sh build_google_test.sh
     
+    - name: make MyNotion lib
+      run: cd ${{github.workspace}}/build; echo $(pwd); sh ./build.sh paly
+
     - name: building test file
       run: cd ${{github.workspace}}/build; echo $(pwd); bash build_test.sh
 

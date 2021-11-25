@@ -27,7 +27,7 @@ Common::DataType::Item::~Item() {
 void Common::DataType::Item::initializationItem() {
     Common::TimeType::DateTime *dateTime = new DateTime();
     dateTime->init();
-    this->setDate_time(dateTime->getDataeTimeAsString());
+    this->setDate_time(dateTime->getDateTimeAsString());
 }
 
 ItemType Common::DataType::Item::getItemType() const {

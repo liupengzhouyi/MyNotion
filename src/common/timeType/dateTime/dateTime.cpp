@@ -15,8 +15,10 @@ void Common::TimeType::DateTime::init() {
     this->time->init();
 }
 
-std::string Common::TimeType::DateTime::getDataeTimeAsString() const {
+std::string Common::TimeType::DateTime::getDateTimeAsString() const {
     std::string strDateTime = std::string();
-    strDateTime = this->date->getDateAsString() + " " + this->time->getTimeAsString();
+    if ((this->date != nullptr) && (this->time != nullptr)) {
+        strDateTime = this->date->getDateAsString() + " " + this->time->getTimeAsString();
+    }
     return strDateTime;
 }

@@ -12,7 +12,7 @@ Common::DataType::Item Module::Controler::Page::CreatePage() {
     item.setId("");
     DateTime *dateTime = new DateTime();
     dateTime->init();
-    item.setDate_time(dateTime->getDataeTimeAsString());
+    item.setDate_time(dateTime->getDateTimeAsString());
     item.setVersion("100");
     return item;
 }

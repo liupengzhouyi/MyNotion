@@ -18,7 +18,7 @@ public:
 
     void init();
 
-    std::string getDataeTimeAsString() const;
+    std::string getDateTimeAsString() const;
 
 private:
 

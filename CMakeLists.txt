@@ -21,5 +21,3 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/build/product/bin) # �
 add_executable(MyNotion ${src_dirs}) # 指定可执行文件名及源码
 
 target_link_libraries(MyNotion item table page readFile) # 链接外部库
-
-
