@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 namespace Module {
 namespace CreateTable {
@@ -14,11 +15,23 @@ public:
 
     ~CreateTable();
 
+    void SetInfo(const std::string& info);
+
+    std::string GetInfo() const;
+
+    void InitTable();
+
+    std::vector<std::vector<std::string>> GetTable();
+
+    
+
 private:
 
     std::string info;
 
-}
+    std::vector<std::vector<std::string>> table;
+
+};
 
 } // namespace CreateTable
 } // namespace Module
