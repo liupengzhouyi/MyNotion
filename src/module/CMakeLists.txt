@@ -7,5 +7,6 @@ message("source code---${PROJECT_SOURCE_DIR}/src/module")
 add_subdirectory(./controler) # 指定 编译子目录
 add_subdirectory(./fileData) # 指定 编译子目录
 add_subdirectory(./select) # 指定 编译子目录
+add_subdirectory(./create) # 指定 编译子目录
 
 # add_subdirectory(./module) # 指定 编译子目录
