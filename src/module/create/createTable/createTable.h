@@ -2,7 +2,7 @@
 #define _MODULE_CREATE_CREATETABLE_H_
 
 #include <iostream>
-
+#include <string>
 
 namespace Module {
 namespace CreateTable {
@@ -18,7 +18,6 @@ private:
 
     std::string info;
 
-    std:
 }
 
 } // namespace CreateTable
