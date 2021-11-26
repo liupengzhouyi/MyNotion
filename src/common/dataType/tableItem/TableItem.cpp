@@ -77,6 +77,7 @@ void Common::DataType::TableItem::SetNextRowItem(TableItem *data)
 Common::DataType::TableItem* Common::DataType::TableItem::CopyTableItemData(TableItem *data)
 {
     TableItem *tempTableItem = new TableItem();
+    return tempTableItem;
 }
 
 void Common::DataType::TableItem::SetData(Common::DataType::TableData *data)

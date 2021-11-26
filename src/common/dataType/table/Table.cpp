@@ -158,5 +158,5 @@ bool Common::DataType::Table::CreateTable(int row, int column)
         head = nullptr;
         indexHead = indexHead->GetNextRowItem();
     }
-
+    return true;
 }
