@@ -6,11 +6,12 @@
 #include <vector>
 
 namespace Module {
-namespace CreateTable {
+namespace Create {
 
 class CreateTable {
 
 public:
+
     CreateTable();
 
     ~CreateTable();
@@ -21,9 +22,9 @@ public:
 
     void InitTable();
 
-    std::vector<std::vector<std::string>> GetTable();
+    std::vector<std::vector<std::string>> GetTable() const;
 
-    
+    std::string GetTableAsString() const;
 
 private:
 

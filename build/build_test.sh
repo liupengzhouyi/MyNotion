@@ -69,3 +69,5 @@ build_unit_test "../test/common/timeType/date"
 build_unit_test "../test/common/timeType/time"
 
 build_unit_test "../test/common/timeType/datetime"
+
+build_unit_test "../test/module/create/createTable"
