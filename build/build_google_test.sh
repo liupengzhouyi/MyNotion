@@ -11,7 +11,7 @@ else
     echo "No Google Test Frame!"
     echo "Begin download google test frame..."
     cd ${google_test_path_frame}
-    git clone https://gitee.com/heyuanquan/googletest.git
+    git clone https://github.com/google/googletest.git
     echo "🐮🍺download google test frame over"
     echo "Building google test brin package..."
     cd googletest
