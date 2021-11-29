@@ -2,7 +2,7 @@
 #include "TestCreateTable.h"
 #include <iostream>
 #include <string>
-#include "../../../../../src/module/create/createTable/createTable.h"
+#include "../../../../src/module/create/createTable/createTable.h"
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv) {
@@ -45,6 +45,6 @@ TEST_F(TastCreateTable, TestGetInfoByIndex) {
   std::string target = "| a |-|s|edf|";
   CreateTable *createTable = new CreateTable();
   createTable->SetInfo("| a |-|s|edf|");
-  std::string info = createTable->GetInfoByIndex(3);
+  std::string info = createTable->GetInfoByIndex(3)[0];
   EXPECT_EQ("-", info);
 }
