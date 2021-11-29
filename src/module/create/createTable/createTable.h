@@ -25,6 +25,8 @@ public:
     std::vector<std::vector<std::string>> GetTable() const;
 
     std::string GetTableAsString() const;
+    
+    std::vector<std::string> GetInfoByIndex(int index) const;
 
 private:
 

@@ -76,3 +76,12 @@ std::string Module::Create::CreateTable::GetTableAsString() const
     }
     return tableAsStr;
 }
+
+std::vector<std::string> Module::Create::CreateTable::GetInfoByIndex(int index) const
+{
+    std::vector<std::string> returnVector = {};
+    for (std::vector<std::string> iter : this->GetTable()) {
+        returnVector.push_back(iter[index]);
+    }
+    return returnVector;
+}

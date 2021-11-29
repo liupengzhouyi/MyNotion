@@ -40,3 +40,11 @@ TEST_F(TastCreateTable, TestCreateTableGetInfo) {
   EXPECT_EQ(createTable->GetInfo(), target);
 }
 
+
+TEST_F(TastCreateTable, TestGetInfoByIndex) {
+  std::string target = "| a |-|s|edf|";
+  CreateTable *createTable = new CreateTable();
+  createTable->SetInfo("| a |-|s|edf|");
+  std::string info = createTable->GetInfoByIndex(3);
+  EXPECT_EQ("-", info);
+}
