@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 namespace Module {
 namespace Create {
@@ -27,6 +28,8 @@ public:
     std::string GetTableAsString() const;
     
     std::vector<std::string> GetInfoByIndex(int index) const;
+
+    std::map<std::string, std::vector<std::string>> GeiInfoInMap(int index) const;
 
 private:
 

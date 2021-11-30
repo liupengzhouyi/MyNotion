@@ -85,3 +85,12 @@ std::vector<std::string> Module::Create::CreateTable::GetInfoByIndex(int index) 
     }
     return returnVector;
 }
+
+std::map<std::string, std::vector<std::string>> Module::Create::CreateTable::GeiInfoInMap(int index) const
+{
+    std::map<std::string, std::vector<std::string>> returnMap = {};
+    for (std::vector<std::string> iter : this->GetTable()) {
+        returnMap[iter[index]] = iter;
+    }
+    return returnMap;
+}

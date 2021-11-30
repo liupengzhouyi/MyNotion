@@ -48,3 +48,17 @@ TEST_F(TastCreateTable, TestGetInfoByIndex) {
   std::string info = createTable->GetInfoByIndex(3)[0];
   EXPECT_EQ("-", info);
 }
+
+
+TEST_F(TastCreateTable, GeiInfoInMap) {
+  std::string target = "| a |-|s|edf|";
+  CreateTable *createTable = new CreateTable();
+  createTable->SetInfo("| a |-|s|edf|");
+  std::map<std::string, std::vector<std::string>> myMap = createTable->GeiInfoInMap(3);
+  std::string info = "";
+  for (auto i = myMap.begin(); i != myMap.end(); ++i) {
+        info = i->first;
+        break;
+  }
+  EXPECT_EQ("-", info);
+}
