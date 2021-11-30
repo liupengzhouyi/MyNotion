@@ -1,5 +1,6 @@
 #include "createTable.h"
 #include <sstream>
+#include <map>
 
 namespace {
 
@@ -81,6 +82,7 @@ std::vector<std::string> Module::Create::CreateTable::GetInfoByIndex(int index) 
 {
     std::vector<std::string> returnVector = {};
     for (std::vector<std::string> iter : this->GetTable()) {
+        // std::cout << "Create: ---+" << std::endl;
         returnVector.push_back(iter[index]);
     }
     return returnVector;
@@ -90,6 +92,7 @@ std::map<std::string, std::vector<std::string>> Module::Create::CreateTable::Gei
 {
     std::map<std::string, std::vector<std::string>> returnMap = {};
     for (std::vector<std::string> iter : this->GetTable()) {
+        // std::cout << "Create: ---" << std::endl;
         returnMap[iter[index]] = iter;
     }
     return returnMap;

@@ -37,6 +37,7 @@ TEST_F(TastCreateTable, TestCreateTableGetInfo) {
   std::string target = "| a |-|s|edf|";
   CreateTable *createTable = new CreateTable();
   createTable->SetInfo("| a |-|s|edf|");
+  createTable->InitTable();
   EXPECT_EQ(createTable->GetInfo(), target);
 }
 
@@ -45,20 +46,23 @@ TEST_F(TastCreateTable, TestGetInfoByIndex) {
   std::string target = "| a |-|s|edf|";
   CreateTable *createTable = new CreateTable();
   createTable->SetInfo("| a |-|s|edf|");
+  createTable->InitTable();
+  std::vector<std::string> l = createTable->GetInfoByIndex(3);
   std::string info = createTable->GetInfoByIndex(3)[0];
-  EXPECT_EQ("-", info);
+  EXPECT_EQ("s", info);
 }
 
 
-TEST_F(TastCreateTable, GeiInfoInMap) {
+TEST_F(TastCreateTable, TestGeiInfoInMap) {
   std::string target = "| a |-|s|edf|";
   CreateTable *createTable = new CreateTable();
-  createTable->SetInfo("| a |-|s|edf|");
+  createTable->SetInfo(target);
+  createTable->InitTable();
   std::map<std::string, std::vector<std::string>> myMap = createTable->GeiInfoInMap(3);
   std::string info = "";
   for (auto i = myMap.begin(); i != myMap.end(); ++i) {
         info = i->first;
         break;
   }
-  EXPECT_EQ("-", info);
+  EXPECT_EQ("s", info);
 }
